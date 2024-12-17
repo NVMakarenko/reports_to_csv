@@ -38,14 +38,7 @@ Dir.glob("#{reports_folder}/**/*.json").each do |file_path|
       largest_contentful_paint: report.dig('audits', 'largest-contentful-paint', 'displayValue'),
       cumulative_layout_shift: report.dig('audits', 'cumulative-layout-shift', 'displayValue'),
       speed_index: report.dig('audits', 'speed-index', 'displayValue'),
-    # Accessibility
-      contrast_issues: report.dig('audits', 'color-contrast', 'details', 'items')&.length,
-      missing_alt_text: report.dig('audits', 'image-alt', 'details', 'items')&.length,
-    # Best Practices
-      best_practices_image_responsive: report.dig('audits', 'image-responsive', 'score'),
-    # SEO
-      seo_description: report.dig('audits', 'meta-description', 'details', 'description'),
-      seo_share_image: report.dig('audits', 'structured-data', 'details', 'shareImage'),
+    ## You can add parameters you need from the report
     }
 
     # Add row to data
